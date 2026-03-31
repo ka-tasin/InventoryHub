@@ -5,6 +5,8 @@ import authRoutes from './modules/auth/auth.routes';
 import categoryRoutes from './modules/categories/category.routes';
 import productRoutes from './modules/products/product.routes';
 import orderRoutes from './modules/orders/order.routes';
+import restockRoutes from './modules/restock/restock.routes';
+
 
 dotenv.config();
 
@@ -20,6 +22,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/restock', restockRoutes);
+
+
 
 
 app.get('/', (req, res) => {
