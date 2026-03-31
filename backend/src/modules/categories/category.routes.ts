@@ -1,7 +1,10 @@
 import { Router } from 'express';
 import { categoryController } from './category.controller';
+import { authenticate } from '../../middleware/auth.middleware';
 
 const router = Router();
+
+router.use(authenticate);
 
 router.post('/', categoryController.create);
 router.get('/', categoryController.getAll);
