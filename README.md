@@ -378,4 +378,4 @@ The system uses **JWT (JSON Web Tokens)** for authentication:
 ```
 ```
 
-**Happy Coding! 🚀**
+**Happy Coding!**
