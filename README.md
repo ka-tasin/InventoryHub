@@ -200,8 +200,6 @@ inventory-hub/
 │   └── package.json
 │
 ├── README.md                       # This file
-├── FULLSTACK_ANALYSIS.md          # Detailed analysis
-└── LOVABLE_AI_PROMPT.md           # AI generation prompt
 ```
 
 ---
