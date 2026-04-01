@@ -63,7 +63,7 @@ const DashboardPage = () => {
           <StatCard title="Total Delivered Orders" value={orderStats?.deliveredOrders ?? 0} icon={ShoppingCart} description={`${orderStats?.pendingOrders ?? 0} pending`} />
           <StatCard title="Low Stock Items" value={lowStock?.length ?? 0} icon={AlertTriangle} description="Below threshold" />
           <div>
-            <StatCard title="Total Revenue" value={`$${Number(orderStats?.totalRevenue ?? 0).toLocaleString()}`} icon={DollarSign} description={`$${Number(orderStats?.revenueToday ?? 0).toLocaleString()} today`} />
+            <StatCard title="Total Revenue" value={`${Number(orderStats?.totalRevenue ?? 0).toLocaleString()}৳`} icon={DollarSign} description={`${Number(orderStats?.revenueToday ?? 0).toLocaleString()}৳ today`} />
           </div>
         </div>
       )}

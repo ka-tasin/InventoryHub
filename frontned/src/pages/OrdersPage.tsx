@@ -187,7 +187,7 @@ const OrdersPage = () => {
                   <TableRow key={o.id}>
                     <TableCell className="font-medium">{o.orderNumber || `#${o.id?.slice(0, 8)}`}</TableCell>
                     <TableCell>{o.customerName}</TableCell>
-                    <TableCell>${Number(o.totalPrice || 0).toFixed(2)}</TableCell>
+                    <TableCell>{Number(o.totalPrice || 0).toFixed(2)}৳</TableCell>
                     <TableCell>
                       <Badge variant="outline" className={statusColors[o.status] || ''}>{o.status}</Badge>
                     </TableCell>
@@ -204,7 +204,7 @@ const OrdersPage = () => {
                               <div className="grid grid-cols-2 gap-2 text-sm">
                                 <div><span className="text-muted-foreground">Customer:</span> {o.customerName}</div>
                                 <div><span className="text-muted-foreground">Status:</span> <Badge variant="outline" className={statusColors[o.status] || ''}>{o.status}</Badge></div>
-                                <div><span className="text-muted-foreground">Total:</span> ${Number(o.totalPrice || 0).toFixed(2)}</div>
+                                <div><span className="text-muted-foreground">Total:</span> {Number(o.totalPrice || 0).toFixed(2)}৳</div>
                                 <div><span className="text-muted-foreground">Date:</span> {o.createdAt ? format(new Date(o.createdAt), 'MMM d, yyyy') : '—'}</div>
                               </div>
                               {o.items?.length > 0 && (

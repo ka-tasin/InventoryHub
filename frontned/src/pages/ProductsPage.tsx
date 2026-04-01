@@ -195,7 +195,7 @@ const ProductsPage = () => {
                 {filtered.map((p: any) => (
                   <TableRow key={p.id}>
                     <TableCell className="font-medium">{p.name}</TableCell>
-                    <TableCell>${Number(p.price).toFixed(2)}</TableCell>
+                    <TableCell>{Number(p.price).toFixed(2)}৳</TableCell>
                     <TableCell>
                       <span className={p.stock <= (p.minThreshold || 0) ? 'text-destructive font-semibold' : ''}>
                         {p.stock}
