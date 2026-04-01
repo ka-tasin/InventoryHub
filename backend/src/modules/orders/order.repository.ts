@@ -302,7 +302,7 @@ export const orderRepository = {
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-    const [todayOrders, pendingOrders, completedOrders, revenueToday, lowStockCount] = await Promise.all([
+    const [todayOrders, pendingOrders, completedOrders, deliveredOrders, revenueToday, totalRevenue, lowStockCount] = await Promise.all([
       prisma.order.count({
         where: {
           createdAt: {
@@ -323,12 +323,27 @@ export const orderRepository = {
           },
         },
       }),
+      prisma.order.count({
+        where: {
+          status: 'DELIVERED',
+        },
+      }),
       prisma.order.aggregate({
         where: {
           createdAt: {
             gte: today,
             lt: tomorrow,
           },
+          status: {
+            not: 'CANCELLED',
+          },
+        },
+        _sum: {
+          totalPrice: true,
+        },
+      }),
+      prisma.order.aggregate({
+        where: {
           status: {
             not: 'CANCELLED',
           },
@@ -376,7 +391,9 @@ export const orderRepository = {
       totalOrdersToday: todayOrders,
       pendingOrders,
       completedOrders,
+      deliveredOrders,
       revenueToday: revenueToday._sum.totalPrice || 0,
+      totalRevenue: totalRevenue._sum.totalPrice || 0,
       lowStockCount,
       lowStockProducts: lowStockProducts.map(p => ({
         ...p,

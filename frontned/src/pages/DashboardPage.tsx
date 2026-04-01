@@ -60,9 +60,11 @@ const DashboardPage = () => {
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <StatCard title="Total Products" value={productStats?.totalProducts ?? 0} icon={Package} description={`${productStats?.activeProducts ?? 0} active`} />
-          <StatCard title="Total Orders" value={orderStats?.totalOrders ?? 0} icon={ShoppingCart} description={`${orderStats?.pendingOrders ?? 0} pending`} />
+          <StatCard title="Total Delivered Orders" value={orderStats?.deliveredOrders ?? 0} icon={ShoppingCart} description={`${orderStats?.pendingOrders ?? 0} pending`} />
           <StatCard title="Low Stock Items" value={lowStock?.length ?? 0} icon={AlertTriangle} description="Below threshold" />
-          <StatCard title="Total Revenue" value={`$${Number(orderStats?.totalRevenue ?? 0).toLocaleString()}`} icon={DollarSign} description={`${orderStats?.completedOrders ?? 0} completed`} />
+          <div>
+            <StatCard title="Total Revenue" value={`$${Number(orderStats?.totalRevenue ?? 0).toLocaleString()}`} icon={DollarSign} description={`$${Number(orderStats?.revenueToday ?? 0).toLocaleString()} today`} />
+          </div>
         </div>
       )}
 
