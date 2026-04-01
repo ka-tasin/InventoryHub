@@ -318,8 +318,6 @@ The system uses **JWT (JSON Web Tokens)** for authentication:
 
 ```
 
----
-
 ## 📊 Database Schema
 
 ### Users Table
@@ -378,8 +376,6 @@ The system uses **JWT (JSON Web Tokens)** for authentication:
 - details (JSON)
 - timestamp
 ```
-
----
 ```
 
 **Happy Coding! 🚀**
