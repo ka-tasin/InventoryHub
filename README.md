@@ -243,8 +243,6 @@ npm run dev
 
 **Frontend runs on**: http://localhost:5173
 
----
-
 ## 📚 API Documentation
 
 ### Base URL
@@ -307,7 +305,6 @@ DELETE /api/restock/:productId/queue   - Remove from queue
 }
 ```
 
----
 
 ## 🔐 Authentication
 
@@ -384,7 +381,5 @@ The system uses **JWT (JSON Web Tokens)** for authentication:
 
 ---
 ```
-
----
 
 **Happy Coding! 🚀**
